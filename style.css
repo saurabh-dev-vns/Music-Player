@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    list-style: none;
+    transition: all .2s ;
+}
+
+body {
+    background-color: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.music {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background-color: #1d1d1d;
+    box-shadow: 10px 10px 20px #0a0a0a, -10px -10px 20px #333333;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.music_heading {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 0 5px 0;
+}
+
+.music_heading button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #1e1e1e;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #0d0d0d,
+        -5px -5px 10px #333333;
+}
+
+.music_heading button i {
+    font-size: 30px;
+    box-shadow: inset 2px 2px 5px #0d0d0d, inset -2px -2px 5px #333;
+    color: #585656;
+    border: none;
+    outline: none;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.music_heading button:active,
+.music_controls button:active {
+    box-shadow: inset 5px 5px 10px #0d0d0d,
+        inset -5px -5px 10px #333333;
+}
+
+.music_heading button i:active,
+.music_controls button i:active {
+    box-shadow: 2px 2px 5px #0d0d0d, -2px -2px 5px #333;
+}
+
+.music_image {
+    width: 100%;
+    margin: 20px 0;
+}
+
+img {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 5px 5px 10px #0d0d0d,
+        -5px -5px 10px #333333;
+}
+
+.music_details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.music_details .music_name {
+    color: #585656;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.music_details .artist_name {
+    color: #585656;
+    opacity: .8;
+    font-weight: 500;
+}
+
+.music_duration {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 2px;
+    padding: 0 5px;
+}
+
+.music_duration .starting_duration,
+.music_duration .total_duration {
+    color: #585656;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.music_progress_bar {
+    width: 100%;
+    height: 8px;
+    background-color: #1d1d1d;
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 10px #0d0d0d, inset -5px -5px 10px #222, 2px 2px 5px #0d0d0d, -2px -2px 5px #333;
+    margin-top: 10px;
+    border: 2px solid #282828;
+    cursor: pointer;
+}
+
+.progress {
+    background-color: #585656;
+    border-radius: 20px;
+    width: 0%;
+    height: 100%;
+    position: relative;
+
+}
+
+.progress::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    opacity: 0;
+    border: 3px solid #1d1d1d;
+    box-shadow: 3px 3px 7px #0d0d0d, -3px -3px 7px #333333;
+    transition: opacity 0.3s;
+}
+
+.music_progress_bar:hover .progress::before {
+    opacity: 1;
+}
+
+.music_controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.music_controls button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #1e1e1e;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #0d0d0d,
+        -5px -5px 10px #333333;
+}
+
+.music_controls button:nth-child(3) {
+    width: 80px;
+    height: 80px;
+}
+
+.music_controls button i {
+    font-size: 30px;
+    box-shadow: inset 2px 2px 5px #0d0d0d, inset -2px -2px 5px #333;
+    color: #585656;
+    border: none;
+    outline: none;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.music_controls button:nth-child(3) i {
+    font-size: 60px;
+}
+
+.music_list {
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    opacity: 0;
+    width: 100%;
+    height: 250px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    background: #1d1d1d;
+    box-shadow: inset 5px 5px 10px #0a0a0a, inset -5px -5px 10px #333333;
+    overflow-y: scroll;
+}
+
+
+.music_list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.music_list::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 0 10px 10px 0;
+}
+
+.music_list::-webkit-scrollbar-track {
+    background-color: #000;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid #333;
+}
+
+.music_list .music_list_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #585656;
+    font-size: 18px;
+}
+
+.music_list_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.music_list_header i {
+    font-size: 30px;
+}
+
+.music_list ul li {
+    color: #585656;
+    margin: 15px 0;
+    background: #1d1d1d;
+    box-shadow: 5px 5px 10px #0a0a0a, -5px -5px 10px #333333;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.music_list ul li:active {
+    box-shadow: inset 5px 5px 10px #0a0a0a, inset -5px -5px 10px #333333;
+}
+
+.music_list_details p {
+    font-size: 15px;
+    margin-top: 2px;
+
+}
+
+.music_list_details span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.shuffle,
+.repeat{
+    background-image: linear-gradient(to right, #8EC5FC 0%, #E0C3FC 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.playing {
+    box-shadow: inset 5px 5px 10px #0a0a0a, inset -5px -5px 10px #333333;
+    padding: 10px;
+    border-radius: 10px;
+}

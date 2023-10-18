@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/icons/icon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="music">
+        <div class="music_heading">
+            <button>
+                <i class="material-icons">expand_more</i>
+            </button>
+            <button id="show_music_list">
+                <i class="material-icons">queue_music</i>
+            </button>
+        </div>
+        <div class="music_image">
+            <img src="">
+        </div>
+
+        <div class="music_details">
+            <span class="music_name"><!--Music Name--></span>
+            <span class="artist_name"><!--Artist Name--></span>
+        </div>
+
+        <div class="music_duration">
+            <span class="starting_duration">00:00</span>
+            <span class="total_duration">4:00</span>
+        </div>
+        <audio src="" id="current_music"></audio>
+        <div class="music_progress_bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="music_controls">
+            <button id="shuffle_song"><i class="material-icons">shuffle</i></button>
+            <button id="prev_song"><i class="material-icons">skip_previous</i></button>
+            <button id="play-pause_song"><i class="material-icons">play_arrow</i></button>
+            <button id="next_song"><i class="material-icons">skip_next</i></button>
+            <button id="repeat_song"><i class="material-icons">repeat</i></button>
+        </div>
+        <div class="music_list">
+            <div class="music_list_header">
+                <i class="material-icons">queue_music</i>
+                <span>Music List</span>
+            </div>
+            <ul>
+                
+            </ul>
+        </div>
+    </div>
+    <script src="./music_list.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
